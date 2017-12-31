@@ -1,0 +1,141 @@
+1. Break It Down
+
+print "Pig Latin"
+
+##################
+
+2. Ahoy! (or Should I Say Ahoyay!)
+
+print "Pig Latin"
+
+##################
+
+3. Input!
+
+print 'Welcome to the Pig Latin Translator!'
+
+# Start coding here!
+original=raw_input("Enter a word: ")
+
+if len(original) > 0 and original.isalpha():
+  print original
+else:
+  print "empty"
+  
+###################
+
+4. Check Yourself!
+
+print 'Welcome to the Pig Latin Translator!'
+
+# Start coding here!
+original=raw_input("Enter a word: ")
+
+if len(original) > 0 and original.isalpha():
+  print original
+else:
+  print "empty"
+  
+##################
+
+5. Check Yourself... Some More
+
+print 'Welcome to the Pig Latin Translator!'
+
+# Start coding here!
+original=raw_input("Enter a word: ")
+
+if len(original) > 0 and original.isalpha():
+  print original
+else:
+  print "empty"
+  
+###################
+
+6. Pop Quiz!
+
+print 'Welcome to the Pig Latin Translator!'
+
+# Start coding here!
+original=raw_input("Enter a word: ")
+
+if len(original) > 0 and original.isalpha():
+  print original
+else:
+  print "empty"
+  
+######################
+
+7. Ay B C
+
+pyg = 'ay'
+
+#######################
+
+8. Word Up
+
+pyg = 'ay'
+
+original = raw_input('Enter a word:')
+
+if len(original) > 0 and original.isalpha():
+  word = original.lower()
+  first = word[0]
+  new_word = word + first + pyg
+  new_word = new_word[1:len(new_word)]
+  print new_word
+else:
+  print 'empty'
+
+#########################
+
+9. Move it on Back
+
+pyg = 'ay'
+
+original = raw_input('Enter a word:')
+
+if len(original) > 0 and original.isalpha():
+  word = original.lower()
+  first = word[0]
+  new_word = word + first + pyg
+  new_word = new_word[1:len(new_word)]
+  print new_word
+else:
+  print 'empty'
+  
+####################
+
+10. Ending Up
+
+pyg = 'ay'
+
+original = raw_input('Enter a word:')
+
+if len(original) > 0 and original.isalpha():
+  word = original.lower()
+  first = word[0]
+  new_word = word + first + pyg
+  new_word = new_word[1:len(new_word)]
+  print new_word
+else:
+  print 'empty'
+  
+###################
+
+11. Testing, Testing, is This Thing On? 
+
+pyg = 'ay'
+
+original = raw_input('Enter a word:')
+
+if len(original) > 0 and original.isalpha():
+  word = original.lower()
+  first = word[0]
+  new_word = word + first + pyg
+  new_word = new_word[1:len(new_word)]
+  print new_word
+else:
+  print 'empty'
+  
+####################
