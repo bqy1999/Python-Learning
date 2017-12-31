@@ -204,8 +204,8 @@ n = [[1, 2, 3], [4, 5, 6, 7, 8, 9]]
 
 def flatten(lists):
 	results = []
-	for numbers in range(len(lists)):
-		for i in range(len(lists[numbers])):
+  for numbers in range(len(lists)):
+    for i in range(len(lists[numbers])):
       results.append(lists[numbers][i])
   return results
 
