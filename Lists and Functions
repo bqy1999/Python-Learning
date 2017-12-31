@@ -210,3 +210,5 @@ def flatten(lists):
   return results
 
 print flatten(n)
+
+###***很重要的一点！！！Python的缩进必须要用空格(两个空格或者四个空格)，不能使用一个tab，因为不同的编译器可能判别不同，就会产生莫名其妙的错误
