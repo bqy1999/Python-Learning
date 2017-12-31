@@ -1,0 +1,235 @@
+1. Practice! Practice Practice!
+
+###########################
+
+2. is_even
+
+def is_even(x):
+  if x % 2 == 0:
+    return True
+  else:
+    return False
+    
+#######################
+
+3. is_int
+
+def is_int(x):
+  if  x-int(x) == 0 :
+  #这个语句很重要,7和7.0都是整数
+    return True
+  else:
+    return False
+    
+###################
+
+4. digit_sum
+
+def digit_sum(n):
+  sum = 0
+  n = str(n)
+  for i in range(len(n)):
+    sum += int(n[i])
+  return sum
+  #很经典的位数和，不错的练习
+  
+###################
+
+5. factorial
+
+def factorial(x):
+  fac = 1
+  for i in range(1,x+1):
+    fac *= i
+  return fac
+  
+######################
+
+6. is_prime
+
+def is_prime(x):
+  if x <= 1:
+    return False
+  else:
+    judge = 0
+    for n in range(2,x-1):
+      if x % n == 0:
+        judge += 1
+    if judge == 0:
+      return True
+    else:
+      return False
+ 
+######################
+
+7. reverse(***)
+
+def reverse(text):
+  ans = ""
+  i = len(text) - 1
+  while(i>=0):
+    ans = ans + text[i]
+    i-=1
+  return ans
+  
+####################
+
+8. anti_vowel(***)
+
+def anti_vowel(text):
+  s = ""
+  for i in text:
+    for j in "aeiouAEIOU":
+      if i == j:
+        i=""
+      else:
+        i=i
+    s = s + i
+  return s
+
+#注意：Python的string类型数据只能加减，不能通过索引进行操作
+
+"""
+def anti_vowel(text):
+    t=""
+    for c in text:
+        for i in "ieaouIEAOU":
+            if c==i:
+                c=""
+            else:
+                c=c
+        t=t+c
+    return t
+    
+"""
+
+print anti_vowel("Hey You!")
+
+############################
+
+9. scrabble_score(***)
+
+score = {"a": 1, "c": 3, "b": 3, "e": 1, "d": 2, "g": 2, 
+         "f": 4, "i": 1, "h": 4, "k": 5, "j": 8, "m": 3, 
+         "l": 1, "o": 1, "n": 1, "q": 10, "p": 3, "s": 1, 
+         "r": 1, "u": 1, "t": 1, "w": 4, "v": 4, "y": 4, 
+         "x": 8, "z": 10}
+
+def scrabble_score(word):
+  word = word.lower()
+  sum = 0
+  for i in word: 
+    sum += score[i]
+  return sum
+  
+#####################
+
+10. censor(***)
+
+def censor(text, word):
+    words = text.split()
+    #将text进行切割split()
+    #这样string就变成list了
+    result = ''
+    stars = '*' * len(word)
+    count = 0
+    for i in words:
+        if i == word:
+            words[count] = stars#列表就可以用index来进行操作了
+        count += 1
+    result =' '.join(words)#用空格( )来将list中搞得各个元素连接
+
+    return result
+      
+#####################
+
+11. count
+
+def count(sequence,item):
+  num = 0
+  for i in sequence:
+    if i == item:
+      num += 1
+  return num
+  
+##################
+
+12. purify(**)
+
+def purify(x):
+  i = 0
+  while i < len(x):
+    if x[i] % 2 != 0:
+      x.pop(i)
+    else:
+      i+=1
+  return x
+  
+#这里要注意数组下标越界的错误
+#如果pop那么下标不动
+#如果没有pop那么下标再后移
+
+###################
+
+13. product
+
+def product(x):
+  sum = 1
+  for i in x:
+    sum *= i
+  return sum
+  
+###################
+
+14. remove_duplicates
+
+def remove_duplicates(x):
+  index = 0
+  while index < len(x):
+    for i in range(index+1,len(x)):
+      if x[index] == x[i]:
+        x.pop(i)
+        break
+    else:
+      index+=1
+  return x
+  
+#我觉得自己的也行,对，试过了，确实也行
+
+def remove_duplicates(inputlist):
+    if inputlist == []:
+        return []
+    
+# Sort the input list from low to high    
+    inputlist = sorted(inputlist)
+# Initialize the output list, and give it the first value of the now-sorted input list
+    outputlist = [inputlist[0]]
+
+# Go through the values of the sorted list and append to the output list
+# ...any values that are greater than the last value of the output list
+    for i in inputlist:
+        if i > outputlist[-1]:#这里outputlist[-1]指的是outputlist列表的最后一个元素
+            outputlist.append(i)
+        
+    return outputlist
+    
+##########################
+
+15. median
+
+def median(numbers):
+  num = sorted(numbers)
+  #呜，这个地方有点坑呢，排序的函数居然不是numbers.sort()，而是sorted(numbers)
+  #如果用num = numbers.sort()，那么num是一个NoneType的数据
+  #要使用num = sorted(numbers)，这样的话num才是一个list
+  ans = 0
+  if len(num) % 2 != 0:
+    ans = num[(len(num)-1)/2]
+    return ans
+  else:
+    ans = (num[len(num)/2] + num[len(num)/2-1])/2.0
+    return ans
+ 
+print median([1,2,3,4,5])
+
+########################
