@@ -1,0 +1,188 @@
+1. Class basics
+
+class Car(object):
+  pass
+  
+###########
+
+2. Create an instance of a class
+
+class Car(object):
+  pass
+
+my_car = Car()
+
+#############
+
+3. Class member variables
+
+class Car(object):
+  condition = "new"
+
+my_car = Car()
+
+###########
+
+4. Calling class member variables
+
+class Car(object):
+  condition = "new"
+
+my_car = Car()
+print my_car.condition
+
+#########
+
+5. Initializing a class
+
+class Car(object):
+  condition = "new"
+  def __init__(self,model,color,mpg):
+    self.model = model
+    self.color = color
+    self.mpg = mpg    
+    
+my_car = Car("DeLorean","silver",88)
+print my_car.condition
+
+#############
+
+6. Referring to member variables
+
+class Car(object):
+  condition = "new"
+  def __init__(self,model,color,mpg):
+    self.model = model
+    self.color = color
+    self.mpg = mpg
+    
+my_car = Car("DeLorean","silver",88)
+print my_car.model
+print my_car.color
+print my_car.mpg
+#注意：在类外面就不需要加上self了
+
+##############
+
+7. Creating class methods
+
+class Car(object):
+  condition = "new"
+  def __init__(self, model, color, mpg):
+    self.model = model
+    self.color = color
+    self.mpg   = mpg
+  def display_car(self):
+    return "This is a %s %s with %s MPG." %(self.color,self.model,str(self.mpg))
+
+my_car = Car("DeLorean", "silver", 88)
+
+print my_car.display_car()
+
+###############
+
+8. Modifying member variables
+
+class Car(object):
+  condition = "new"
+  def __init__(self, model, color, mpg):
+    self.model = model
+    self.color = color
+    self.mpg   = mpg
+    
+  def display_car(self):
+    return "This is a %s %s with %s MPG." %(self.color,self.model,str(self.mpg))
+  
+  def drive_car(self):
+    self.condition = "used"
+
+my_car = Car("DeLorean", "silver", 88)
+
+print my_car.condition
+my_car.drive_car()
+print my_car.condition
+
+#注意：在类中对数据成员进行操作，比如改变它们的值，都需要在前面加上self.
+
+################
+
+9. Inheritance
+
+class Car(object):
+  condition = "new"
+  def __init__(self, model, color, mpg):
+    self.model = model
+    self.color = color
+    self.mpg   = mpg
+   
+  def display_car(self):
+    print "This is a %s %s with %s MPG." % (self.color, self.model, str(self.mpg))
+    
+  def drive_car(self):
+    self.condition = "used"
+
+my_car = Car("DeLorean", "silver", 88)
+
+#############
+class ElectricCar(Car):
+  def __init__(self,model,color,mpg,battery_type):
+    self.model = model
+    self.color = color
+    self.mpg = mpg
+    self.battery_type = battery_type
+    
+my_car = ElectricCar("DeLoreanm","silver",88,"molten salt")
+
+###############
+
+10. Overriding methods
+
+class Car(object):
+  condition = "new"
+  def __init__(self, model, color, mpg):
+    self.model = model
+    self.color = color
+    self.mpg   = mpg
+   
+  def display_car(self):
+    print "This is a %s %s with %s MPG." % (self.color, self.model, str(self.mpg))
+    
+  def drive_car(self):
+    self.condition = "used"
+
+my_car = Car("DeLorean", "silver", 88)
+
+class ElectricCar(Car):
+  def __init__(self,model,color,mpg,battery_type):
+    self.model = model
+    self.color = color
+    self.mpg = mpg
+    self.battery_type = battery_type
+  
+  def drive_car(self):
+    self.condition = "like new"
+    
+my_car = ElectricCar("DeLoreanm","silver",88,"molten salt")
+
+print my_car.condition
+my_car.drive_car()
+print my_car.condition
+
+###############
+
+11. Building useful classes
+
+class Point3D(object):
+  def __init__(self,x,y,z):
+    self.x = x
+    self.y = y
+    self.z = z
+  
+  def __repr__(self):
+    return "(%d, %d, %d)" %(self.x,self.y,self.z)  #这里打印的格式要注意
+
+my_point = Point3D(1,2,3)
+
+print my_point
+
+###############
